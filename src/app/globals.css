@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f6;
+  --foreground: #14181d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Korean corporate engineering palette: warm paper light, sparing brand orange,
+     dark charcoal reserved for section breaks (stats, CTA, footer). */
+  --color-koin-bg: #faf9f6;
+  --color-koin-bg-alt: #f0efe8;
+  --color-koin-ink: #14181d;
+  --color-koin-muted: #5b6470;
+  --color-koin-line: #ddd9cf;
+
+  --color-koin-dark: #12161c;
+  --color-koin-dark-alt: #1a1f27;
+  --color-koin-dark-line: #2a3038;
+  --color-koin-dark-muted: #8c96a3;
+
+  --color-koin-orange: #cc7604;
+  --color-koin-orange-deep: #8a5203;
+  --color-koin-orange-glow: #ff9a2e;
+  --color-koin-green: #1b5e32;
+  --color-koin-green-deep: #123f22;
+
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+
+  --animate-marquee: marquee 46s linear infinite;
+  --animate-marquee-fast: marquee 26s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background-color: #cc7604;
+  color: #faf9f6;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Duotone photo treatment: grayscale base + brand-tinted overlay via mix-blend-mode,
+   used instead of generic card gradients to give real-photo sections an editorial feel. */
+.duotone {
+  filter: grayscale(1) contrast(1.05);
+}
+
+.duotone-overlay {
+  mix-blend-mode: multiply;
+}
+
+.duotone-overlay-dark {
+  mix-blend-mode: color;
 }
