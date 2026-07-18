@@ -64,7 +64,7 @@ export const capabilities = [
 export const stats = [
   { label: "Years in Operation", value: 25, suffix: "+" },
   { label: "Projects Delivered", value: 150, suffix: "+" },
-  { label: "On-Time Delivery Rate", value: 98, suffix: "%" },
+  { label: "On-Time Delivery Rate", value: 99, suffix: "%" },
   { label: "Lost-Time Incidents (YTD)", value: 0, suffix: "" },
 ] as const;
 // NOTE for client review: figures above are placeholders sized to a company of this
