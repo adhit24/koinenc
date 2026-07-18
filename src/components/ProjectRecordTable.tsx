@@ -32,7 +32,7 @@ export function ProjectRecordTable({ rows }: { rows: ProjectRecordRow[] }) {
                 key={cat}
                 type="button"
                 onClick={() => setActive(cat)}
-                className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+                className={`rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors ${
                   active === cat
                     ? "border-koin-ink bg-koin-ink text-koin-bg"
                     : "border-koin-line text-koin-muted hover:border-koin-ink hover:text-koin-ink"
@@ -48,7 +48,7 @@ export function ProjectRecordTable({ rows }: { rows: ProjectRecordRow[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search project, client, or scope of work…"
-          className="w-full max-w-xs rounded-full border border-koin-line bg-koin-bg px-4 py-2 text-sm outline-none focus:border-koin-orange-deep sm:w-64"
+          className="w-full max-w-xs rounded-full border border-koin-line bg-koin-bg px-4 py-2.5 text-sm outline-none focus:border-koin-orange-deep sm:w-64"
         />
       </div>
 
