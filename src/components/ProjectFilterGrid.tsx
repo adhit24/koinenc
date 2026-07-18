@@ -18,7 +18,7 @@ export function ProjectFilterGrid({ projects }: { projects: MajorProject[] }) {
             key={cat}
             type="button"
             onClick={() => setActive(cat)}
-            className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+            className={`rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors ${
               active === cat
                 ? "border-koin-ink bg-koin-ink text-koin-bg"
                 : "border-koin-line text-koin-muted hover:border-koin-ink hover:text-koin-ink"
